@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+
+<!-- Loop through the books collection and create links for each book -->
+<div th:each="book : ${books}">
+    <a th:href="@{/book/{id}(id=${book.id})}"
+       th:text="${book.name + ' by ' + book.author + ', ' + book.year}">Book</a>
+</div>
+
+<br/>
+<hr/>
+
+<!-- Link to the form to add a new book -->
+<a th:href="@{/book/new}">Add new book</a>
+
+</body>
+</html>
